@@ -1,4 +1,4 @@
-# 🎨 Animation Playground — From Scratch to Smooth Motion
+# 🎨 Animation Playground From Scratch to Smooth Motion
 
 > A learning-focused animation repository featuring handcrafted effects built from scratch using modern frontend tools like React, GSAP, and Framer Motion.
 
@@ -26,7 +26,7 @@ All animations are:
 
 Here’s a visual preview of the animations included in this repository:
 
-![Animation Preview](screenshots/1.png)
+![Animation Preview](ScreenShots/1.png)
 
 ---
 
@@ -88,7 +88,7 @@ git clone https://github.com/your-username/your-repo-name.git
 - Frontend Developers
 
 - Motion Designers
-- 
+
 - Students & learners
 
 - Anyone curious about modern web animations
