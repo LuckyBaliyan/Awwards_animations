@@ -14,7 +14,8 @@ const Hero = () => {
   const counter = {value:0};
 
   const heroImagesRef = useRef(null);
-  //const imagesRef = useRef([]); will not be using due to anbiguty in .img and .hero-img 
+  //const imagesRef = useRef([]); 
+  // will not be using due to anbiguty in .img and .hero-img 
 
 
   const headingRef = useRef(null);
@@ -125,11 +126,11 @@ const Hero = () => {
           </div>
 
           <div ref={heroImagesRef} className="hero-images">
-            <div className='img'><img src="6.png" alt=""  /></div>
-            <div className='img'><img src="6.png" alt="" /></div>
-            <div className='img hero-img'><img src="6.png" alt="" /></div>
-            <div className='img'><img src="6.png" alt="" /></div>
-            <div className='img'><img src="6.png" alt="" /></div>
+            <div className='img'><img src="4.jpg" alt=""  /></div>
+            <div className='img'><img src="4.jpg" alt="" /></div>
+            <div className='img hero-img'><img src="4.jpg" alt="" /></div>
+            <div className='img'><img src="4.jpg" alt="" /></div>
+            <div className='img'><img src="4.jpg" alt="" /></div>
           </div>
 
           <div className="hero-header">
