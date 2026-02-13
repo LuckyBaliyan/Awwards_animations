@@ -27,6 +27,7 @@ All animations are:
 Here’s a visual preview of the animations included in this repository:
 
 ![Animation Preview](ScreenShots/1.png)
+![Animation Preview](ScreenShots/2.png)
 
 ---
 
