@@ -1,0 +1,39 @@
+.nav {
+  width: fit-content;
+  padding: 1.2em 0.8em;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  margin-top: 2em;
+  background: linear-gradient(#ffffff8f, rgba(255, 255, 255, 0.537));
+  border-radius: 1.2em;
+  box-shadow: 0px 2px 7px #7e7e7e5d;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:0;
+
+    li {
+      font-size: 18px;
+      font-weight: 500;
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    
+    li:last-child{
+        margin-left:18px ;
+    }
+
+    li:not(:last-child)::after {
+      content: "|";
+      margin-left: 18px;
+      color: #aaaaaa9a;
+      font-weight: 300;
+    }
+  }
+}

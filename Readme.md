@@ -28,6 +28,7 @@ Here’s a visual preview of the animations included in this repository:
 
 ![Animation Preview](ScreenShots/1.png)
 ![Animation Preview](ScreenShots/2.png)
+![Animation Preview](ScreenShots/3.png)
 
 ---
 
@@ -69,8 +70,10 @@ Here’s a visual preview of the animations included in this repository:
 ## 📂 Project Structure
 
 ├── animations/
-├── screenshots/
-│ └── 1.png
+├── ScreenShots/
+│ ├── 1.png
+│ ├── 2.png
+│ └── 3.png
 ├── index.html
 └── README.md
 
