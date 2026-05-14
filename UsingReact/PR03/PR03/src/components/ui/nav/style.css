@@ -1,36 +1,13 @@
 .nav {
   width: -moz-fit-content;
   width: fit-content;
-  padding: 1.2em 0.8em;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  margin-top: 2em;
-  background: linear-gradient(rgba(255, 255, 255, 0.5607843137), rgba(255, 255, 255, 0.537));
-  border-radius: 1.2em;
-  box-shadow: 0px 2px 7px rgba(126, 126, 126, 0.3647058824);
+  padding: 2em;
 }
 .nav ul {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 0;
 }
 .nav ul li {
   font-size: 18px;
   font-weight: 500;
-  list-style: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-.nav ul li:last-child {
-  margin-left: 18px;
-}
-.nav ul li:not(:last-child)::after {
-  content: "|";
-  margin-left: 18px;
-  color: rgba(170, 170, 170, 0.6039215686);
-  font-weight: 300;
 }/*# sourceMappingURL=style.css.map */
