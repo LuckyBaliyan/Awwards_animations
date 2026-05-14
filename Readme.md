@@ -100,4 +100,4 @@ git clone https://github.com/your-username/your-repo-name.git
 ## ⭐ Support
 
 If you like this project, don’t forget to give it a ⭐
-It really helps 💙
+Hope it really helps 💙
