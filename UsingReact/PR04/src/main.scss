@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html,body{
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body{
+    width:100%;
+    min-height: 100dvh;
+    font-family: "Inter Tight",sans-serif;
+    background-color: #040404;
+    color:#fefefe;
+}
+
+main{
+    width:100%;
+    height:100%;
+
+    position: relative;
+}
+
+
+::view-transition-old(root),
+::view-transition-new(root){
+    animation: none;
+    mix-blend-mode: normal;
+
+    overflow: hidden;
+
+    will-change:
+      clip-path,
+      transform,
+      opacity;
+
+    backface-visibility: hidden;
+}
+
+::view-transition-old(root){
+    z-index: 1;
+}
+
+::view-transition-new(root){
+    z-index: 2;
+    animation: clip 1.2s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+
+@keyframes clip {
+   0%{
+       clip-path: inset(50% 50% 50% 50% round 2vw);
+       transform: scale(1.4);
+   }   
+   78%{
+    clip-path: inset(0 0 0 0 round 2vw);
+    transform: scale(1);
+   }
+   100%{
+     clip-path: inset(0 0 0 0 round 0);
+     transform: scale(1);
+   }
+}

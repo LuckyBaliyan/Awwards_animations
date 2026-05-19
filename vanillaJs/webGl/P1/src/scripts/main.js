@@ -38,7 +38,7 @@ const geometry = new THREE.PlaneGeometry(2, 2);
 
 const material = new THREE.ShaderMaterial({
     vertexShader,
-    fragmentShader: fragmentShader_V3_PulsingRings,
+    fragmentShader: fragmentShader_V5_ChaoticStorm,
     uniforms,
     transparent: true,
     depthWrite: false,

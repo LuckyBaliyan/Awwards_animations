@@ -1,0 +1,47 @@
+nav{
+    padding: 1em;
+    border-radius: 2em;
+    background: rgba(255, 255, 255, 0.676);
+
+    backdrop-filter: blur(150px);
+    -webkit-backdrop-filter: blur(150px);
+    width:fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:1.5rem;
+    position: fixed;
+    top:5%;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    .link{
+        color:#000;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    p{
+        cursor: pointer;
+    }
+}
+
+
+@media (max-width: 800px){
+    nav{
+        width:70%;
+        border: 0;
+        outline: none;
+
+        padding: .6em;
+
+        gap: .8rem;
+
+        .link{
+            font-size: 16px;
+            text-transform: capitalize;
+        }
+    }
+}
+
