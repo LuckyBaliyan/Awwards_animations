@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body{
+    min-height:100svh;
+    background-color: #171717;
+    font-family: "DM mono",sans-serif;
+}
+
+main{
+    width: 100%;
+    height: 100svh;
+    position: relative;
+}
+
+main .spotlight{
+   width: 100%;
+   height: 100%;
+   background-color: #171717;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+   perspective: 800px;
+   transform-style: preserve-3d;
+}
+
+.projects-preview{
+    display: grid;
+    grid-template-columns: repeat(12, 60px);
+    grid-template-rows: repeat(9, 60px);
+    transform-style: preserve-3d;
+}
+
+.tile{
+    width: 60px;
+    aspect-ratio: 1;
+    position: relative;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.tile-face{
+    position: absolute;
+    width: 60px;
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+    backface-visibility: hidden;
+}
+
+.face-front{
+    transform: translateZ(30px);
+}
+
+.face-rear{
+    transform: rotateY(180deg) translateZ(30px);
+}
+
+.face-left{
+    transform: rotateY(-90deg) translate(30px);
+}
+
+.face-right{
+    transform: rotateY(90deg) translateZ(30px);
+}
+
+.face-top{
+    transform: rotateX(90deg) translateZ(30px);
+}
+
+.face-bottom{
+    transform: rotateX(-90deg) translateZ(30px);
+}
+
+.project-list{
+    position: absolute;
+    right: 3rem;
+    bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.project-list a{
+    text-decoration: none;
+    color:#fff;
+    text-align: right;
+    font-size: 1.25rem;
+    padding: 0.125rem 0;
+    cursor: pointer;
+    opacity: 0.5;
+    text-transform: uppercase;
+    transition: opacity .25s ease-in-out;
+}
+
+.project-list a:hover,
+.project-list a.active{
+    opacity: 1;
+}
