@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+body{
+    height: 100svh;
+    background-color: #000;
+    font-family: "DM Sans", sans-serif;
+
+    color: #fff;
+}
+
+
+.spotlight{
+    position: relative;
+    width: 100%;
+    height:  100svh;
+}
+
+.spotlight-track{
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    max-width: 1400px;
+    transform: translate(-50%, -50%);
+}
+
+.spotlight-panels{
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.spotlight-panel{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    will-change: left, width;
+    overflow: hidden;
+}
+
+.spotlight-panel img{
+    width: 400px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
+
+    :hover{
+        filter: brightness(200%);
+    }
+}
+
+.spotlight-focus-indicator{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border: 3px solid #fff;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    will-change: left, width;
+    pointer-events: none;
+    user-select: none;
+    z-index:100;
+    box-sizing: border-box;
+}
+
+.spotlight-focus-indicator::before,
+.spotlight-focus-indicator::after{
+    content: "";
+    position: absolute;
+    width: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+}
+
+.spotlight-focus-indicator::after{
+    top: 100%;
+    height: 100svh;
+}
+
+.spotlight-focus-indicator::before{
+    bottom: 100%;
+    height: 100svh;
+}
+
+@media (max-width: 1000px){
+    .spotlight-panels{
+        height: 260px;
+    }
+
+    .spotlight-panel img{
+        width: 200px;
+    }
+}
+
+
+.spotlight-content{
+    position: absolute;
+    left: 0;
+    bottom: -140px;
+    width: 100%;
+}
+
+.spotlight-content h2{
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    animation: textReveal .6s ease forwards;
+}
+
+.spotlight-lines{
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+}
+
+.spotlight-lines p{
+    color: rgba(255,255,255,.7);
+    font-size: .95rem;
+    letter-spacing: .05em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: lineReveal .6s ease forwards;
+    line-height: .85;
+}
+
+@keyframes lineReveal{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textReveal{
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(10px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0px);
+    }
+}

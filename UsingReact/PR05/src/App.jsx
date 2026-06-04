@@ -1,8 +1,11 @@
 import React from 'react'
+import Spotlight from './components/Spotlight/Spotlight';
 
 const App = () => {
   return (
-    <div>App</div>
+    <>
+     <Spotlight />
+    </>
   )
 }
 
