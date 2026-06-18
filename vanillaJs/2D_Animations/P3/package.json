@@ -1,0 +1,19 @@
+{
+  "name": "P3",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rspack build",
+    "dev": "rspack dev",
+    "preview": "rspack preview"
+  },
+  "devDependencies": {
+    "@rspack/cli": "^2.0.8",
+    "@rspack/core": "^2.0.8",
+    "@rspack/dev-server": "^2.0.3"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0"
+  }
+}
