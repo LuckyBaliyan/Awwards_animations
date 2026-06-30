@@ -1,0 +1,64 @@
+.stripmask-wrapper {
+  position: relative;
+}
+
+.stripmask-pin {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The actual visual stage. On mobile it fills the pinned viewport
+   edge-to-edge; on laptop/desktop it shrinks to 70% width/height,
+   centered, with equal spacing on all sides. */
+.stripmask-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .stripmask-stage {
+    width: 60%;
+    height: 85%;
+  }
+}
+
+.stripmask-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.stripmask-base-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.stripmask-stripe-group {
+  position: absolute;
+  inset: 0;
+}
+
+.stripmask-stripe {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  clip-path: inset(0% 0% 0% 0%);
+  will-change: clip-path;
+}
+
+.stripmask-stripe-image {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
