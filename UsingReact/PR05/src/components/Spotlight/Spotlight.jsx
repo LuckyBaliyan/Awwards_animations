@@ -38,7 +38,6 @@ const Spotlight = () => {
 
   //now we will calculate the each panel position and all of our functions will be wrapped by 
   // useCallback to prevent any uncessary calculations on each render
-
   const getPanelPosition = useCallback((panelIndex)=>{
     const totalTrackWidth = 
           (panelCount - 1) * (PANEL_WIDTH_COLLAPSED + PANEL_GAP) + expandedWidth;
