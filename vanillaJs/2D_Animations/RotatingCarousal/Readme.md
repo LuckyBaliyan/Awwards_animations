@@ -201,3 +201,15 @@ RotatingCarousal/
     └── styles/
         └── main.css        # 3D perspective & component styling
 ```
+---
+
+## 🎨 Credits
+
+**Original Design:** [AND2ES](https://www.and2es.com/)
+
+**Re-coded & Redesigned by:** **Lucky Baliyan**
+
+This project is a personal recreation and redesign inspired by the original website.
+All implementation, animations, and interactions were re-coded from scratch for learning and experimentation.
+
+---
