@@ -10,8 +10,6 @@ The interaction starts as a small dot and expands into a large image card when h
 
 ![Interactive Spot Card](./screenShots/1.png)
 
-> Replace `./screenshot.png` with the path to your screenshot.
-
 ---
 
 ## ✨ Features
@@ -41,3 +39,14 @@ The interaction starts as a small dot and expands into a large image card when h
 ```bash
 npm install
 npm run dev
+```
+
+---
+
+## 🎨 Credits
+
+Inspired by interactive web experiences from zentry.com
+
+Re-coded by Lucky Baliyan
+
+This project is a recreation made for learning, experimentation, and understanding interactive web animation techniques.
