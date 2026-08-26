@@ -1,0 +1,82 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+html,
+body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #010101;
+}
+
+.carousal-scene {
+      height: 100vh;
+      width: 100%;
+      perspective: 1300px;
+      /* Distance b/w camera and screen */
+}
+
+.carousal {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform-style: preserve-3d;
+      /* creates 3d space */
+
+      /* creates a variable for number of slides */
+      --n: 8;
+      --angle: calc(360deg / var(--n));
+      /* n = 8 --> 45deg  and becuase its calc so we literally divide angle with n to get 
+      another angle rather than a mathametical value*/
+
+      /* start animation */
+      animation: spin 30s linear infinite;
+}
+
+.carousal-item {
+      height: 45%;
+      width: 15%;
+      border-radius: .3em;
+      position: absolute;
+}
+
+.carousal-item img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+}
+
+/* postion determination */
+
+/* overall 360 deg 
+   each = 360/n 
+
+   each = x deg angle to be rotateY(x deg)
+   for 1st = x deg 
+   for 2nd = 2 * x deg;
+   for 3rd = 3 * x deg;
+   for nth = n * x deg;
+
+   and with each give a comman translate z that will provide the depth or distance from the center.
+*/
+
+.carousal-item {
+      transform: rotateY(calc(var(--i) * var(--angle))) translateZ(400px);
+}
+
+/* for spin effect we animates the carousal itself */
+@keyframes spin {
+      from {
+            transform: rotateY(0deg);
+      }
+
+      to {
+            transform: rotateY(360deg);
+      }
+}
