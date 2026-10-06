@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root {
+  --bg: #F9F9F9;
+  --line: #e1e1e1;
+  --row: 12.5vh;
+  --inset-x: 49px;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--bg);
+}
+
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--inset-x);
+  right: var(--inset-x);
+  height: calc(var(--row) * 7);
+  background-image: linear-gradient(to bottom,
+      transparent calc(100% - 1px),
+      var(--line) calc(100% - 1px));
+  background-size: 100% var(--row);
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.stage>* {
+  position: relative;
+  z-index: 1;
+}
