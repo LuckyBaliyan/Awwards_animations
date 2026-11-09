@@ -12,6 +12,12 @@
 
 ---
 
+<p align="center">
+  <img src="./shots/1.png" alt="3D Cylindrical Artist Ring Carousel Preview" width="100%" />
+</p>
+
+---
+
 ## 🌟 Acknowledgement & Inspiration
 
 This project is a creative recreation inspired by the mesmerizing circular showcase experience on **[follow.art](https://follow.art)**. Full credit goes to the brilliant designers and creative technologists behind **follow.art** for pioneering this elegant visual aesthetic and interaction pattern!
@@ -165,6 +171,8 @@ The project integrates **GSAP's `Observer` plugin** and **`gsap.ticker`**:
 ```text
 pr10/
 ├── public/                 # Static assets (favicons, etc.)
+├── shots/                  # Showcase screenshots and preview media
+│   └── 1.png               # High-res preview of the 3D cylindrical carousel
 ├── src/
 │   ├── components/
 │   │   └── Hero.jsx        # Core 3D cylinder canvas animation & GSAP logic

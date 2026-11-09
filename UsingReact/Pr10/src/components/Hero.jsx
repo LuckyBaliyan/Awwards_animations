@@ -10,6 +10,11 @@ const slicesPerCard = 120;
 const gap = 0.1;
 const normalSpeed = 0.01;
 
+/**
+ * Hero Component
+ * Renders an interactive 3D cylindrical carousel of artist cards on a 2D HTML5 canvas.
+ * Manages canvas lifecycle, GSAP animations, ticker updates, and user drag interactions.
+ */
 const Hero = () => {
       const canvasRef = useRef(null);
 
@@ -24,6 +29,14 @@ const Hero = () => {
             let cancelled = false;
             let observer;
 
+            /**
+             * createCard
+             * Creates an offscreen virtual canvas for an individual artist card.
+             * Pre-renders the artist portrait, name, and role into a reusable image buffer to ensure high-performance rendering.
+             * 
+             * @param {Object} artist - The artist data object containing name, role, and photo hash.
+             * @returns {HTMLCanvasElement} The offscreen canvas element containing the pre-rendered card.
+             */
             function createCard(artist) {
                   const card = document.createElement("canvas");
                   card.width = 1200;
@@ -50,11 +63,25 @@ const Hero = () => {
                   return card;
             }
 
+            /**
+             * resize
+             * Synchronizes the canvas dimensions with the window size and display pixel ratio.
+             * Ensures sharp, non-blurry graphics across standard and Retina / High-DPI screens.
+             */
             function resize() {
                   canvas.width = innerWidth * devicePixelRatio;
                   canvas.height = innerHeight * devicePixelRatio;
             }
 
+            /**
+             * pointRing
+             * Projects a point on a 3D circle at a specified angle and radius onto 2D canvas coordinates.
+             * Computes perspective depth using cosine and horizontal positioning using sine.
+             * 
+             * @param {number} angle - The angle on the circle in radians.
+             * @param {number} radius - The radius of the cylindrical ring in pixels.
+             * @returns {{x: number, y: number, scale: number}} Projected 2D position and perspective scale.
+             */
             function pointRing(angle, radius) {
                   const depth = Math.cos(angle);
                   const scale = 1 + depth * 0.25;
@@ -65,6 +92,14 @@ const Hero = () => {
                   };
             }
 
+            /**
+             * drawRing
+             * Slices each artist card into vertical strips and renders them around the cylinder.
+             * Handles double-sided rendering by drawing the textured image when facing forward
+             * and a clean card-stock backing when facing backward.
+             * 
+             * @param {"front" | "back"} side - Specifies whether to draw the front or back facing slices.
+             */
             function drawRing(side) {
                   const radius = Math.min(canvas.width * 0.4, canvas.height * 0.5);
                   const slotAngle = (Math.PI * 2) / cards.length;
@@ -98,6 +133,12 @@ const Hero = () => {
                   });
             }
 
+            /**
+             * tick
+             * Main animation loop callback executed on every frame via GSAP ticker.
+             * Advances the ring's rotational angle, clears the screen, applies center transforms & tilt,
+             * and draws both back and front layers of the cylinder in proper depth order.
+             */
             function tick() {
                   ring.angle += ring.speed * gsap.ticker.deltaRatio();
 
@@ -110,6 +151,12 @@ const Hero = () => {
                   cntx.restore();
             }
 
+            /**
+             * init
+             * Asynchronously prepares and starts the carousel experience.
+             * Awaits custom font loading, pre-renders cards, attaches event listeners,
+             * sets up GSAP idle oscillation tweens, and configures touch/pointer gesture inertia.
+             */
             async function init() {
                   await document.fonts.load("500 80px Syne");
                   if (cancelled) return;
