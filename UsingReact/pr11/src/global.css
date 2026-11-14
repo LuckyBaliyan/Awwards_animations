@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body {
+    background: #0b0b0c;
+    color: #f4f4f2;
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+  }
+}
+
+/* ==========================================================================
+   View Transitions API - Minimal & Exact
+   Uses view-transition-class to target all film transitions uniformly
+   ========================================================================== */
+
+@view-transition {
+  navigation: auto;
+}
+
+/* Assign class for grouping */
+.film {
+  view-transition-class: film;
+}
+
+/* 0.9s fluid morph animation for all film cards & hero */
+::view-transition-group(.film) {
+  animation-duration: 0.9s;
+  animation-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* Ensure video snapshots scale and cover cleanly without stretching */
+::view-transition-old(.film),
+::view-transition-new(.film) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+::view-transition-new(.film) {
+  animation: none;
+}
+
+/* Active film old image fades out quickly to reveal the live element */
+::view-transition-old(.film) {
+  animation: fade-out 0.1s linear 0.35s both;
+}
+
+/* Non-active cards fade out when opening a film */
+::view-transition-old(.film):only-child {
+  animation: fade-out 0.25s ease both;
+}
+
+/* Non-active cards fade back in when returning home */
+::view-transition-new(.film):only-child {
+  animation: fade-in 0.3s ease 0.6s both;
+}
+
+/* Keep hero on top while it shrinks back into the home grid */
+:root:has(.home)::view-transition-old(.film) {
+  z-index: 1;
+  animation: fade-out 0.2s ease 0.7s both;
+}
+
+/* Title transition and rise effect */
+::view-transition-group(title) {
+  overflow: clip;
+}
+
+::view-transition-new(title) {
+  animation: rise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.45s both;
+}
+
+/* Keyframes */
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(105%);
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
